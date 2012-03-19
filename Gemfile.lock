@@ -70,6 +70,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    railroady (1.0.7)
     rails (3.2.2)
       actionmailer (= 3.2.2)
       actionpack (= 3.2.2)
@@ -125,6 +126,7 @@ DEPENDENCIES
   devise
   jquery-rails
   pg
+  railroady
   rails (= 3.2.2)
   rails_best_practices
   sass-rails (~> 3.2.3)
