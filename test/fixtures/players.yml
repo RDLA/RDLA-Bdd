@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  posx: 1
+  posy: 1
+  map: 
+  visual_acuity: 1
+  user: 
+
+two:
+  name: MyString
+  posx: 1
+  posy: 1
+  map: 
+  visual_acuity: 1
+  user: 

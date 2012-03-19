@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  type: 
+  priority: 1
+  effort: 1
+  status: MyString
+  user: 
+
+two:
+  description: MyText
+  type: 
+  priority: 1
+  effort: 1
+  status: MyString
+  user: 

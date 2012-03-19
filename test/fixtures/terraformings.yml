@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  posx: 1
+  posy: 1
+  map: 
+  field: 
+
+two:
+  posx: 1
+  posy: 1
+  map: 
+  field: 
