@@ -1,0 +1,16 @@
+common: &common
+  adapter: postgresql
+  username: damien
+  password: damien
+
+development:
+  <<: *common
+  database: rdla_development
+
+test:
+  <<: *common
+  database: rdla_test
+
+production:
+  <<: *common
+  database: rdla_production
