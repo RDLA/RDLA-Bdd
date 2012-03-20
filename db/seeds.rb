@@ -6,7 +6,7 @@
 end
 # Default field
 field = Field.find_or_initialize_by_filename("Herbe.png")
-field.category_id = Category.find 1 
+field.category_id = Category.find 1
 field.color = "green"
 field.save
 
@@ -15,10 +15,12 @@ map = Map.find_or_initialize_by_name("Aurorea")
 map.default_field = field if map.default_field.blank?
 map.save
 
+
 #Default Admin if didn't exist
 if User::Admin.count == 0
-	admin = User::Admin.new
-	admin.email = "admin@rdla.fr"
-	admin.password = "azerty"
-	admin.save
+  admin = User::Admin.new
+  admin.email = "admin@rdla.fr"
+  admin.password = "azerty"
+  admin.save
 end
+
