@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.database_authenticatable :null => false
       t.trackable
       t.string :role, :null => false ,:default => "user"
-
+	  t.string :type
       t.timestamps
     end
 
