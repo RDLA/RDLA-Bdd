@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20120319175908) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "role",                              :default => "user", :null => false
+    t.string   "type"
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
   end
