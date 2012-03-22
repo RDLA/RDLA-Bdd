@@ -9,5 +9,20 @@ class Map < ActiveRecord::Base
 
   validates :default_field, :presence => true
   validates :name, :presence => true
-
+  
+  # Internal: Get fields wich center is (centreX,centreY) with a radius of zone
+  #
+  # Returnings an array of fields in the specified area.
+  def get_fields(centreX, centreY, zone = 5)
+    # TODO: Get all fields in a specified area of the current map
+    @fields = Hash.new
+      self.terraformings.where("posx BETWEEN ? and ? 
+                        AND posy BETWEEN ? and ?",
+                        centreX-zone, centreX+zone,
+                        centreY-zone, centreY+zone).each do |field|
+    
+      @fields["#{field.posx};#{field.posy}"] = field
+     end
+    @fields
+  end
 end

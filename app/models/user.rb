@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    attr_accessible :email
+    attr_accessible :email, :password, :password_confirmation
     devise :database_authenticatable, :trackable, :validatable
 
     has_many :stories
@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 
     validates :email, :presence => true
     validates :role, :presence => true
+    validates :password, :confirmation => true
 end

@@ -2,6 +2,7 @@ class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players do |t|
       t.string :name, :null => false
+      t.string :description, :null => false
       t.integer :posx, :null => false
       t.integer :posy, :null => false
       t.references :map, :null => false

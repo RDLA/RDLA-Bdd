@@ -1,0 +1,248 @@
+html,body
+{
+	margin:0;
+	height:100%;
+}
+body
+{
+	font-family: 'Happy Monkey', cursive;
+	background:url("/assets/back.jpg");
+}
+h1
+{
+	text-decoration:none;
+	text-align:center;
+    text-shadow: 1px 1px 4px #000;
+    color:#DDD;
+     background: rgba(100,0,0,0.8);
+     box-shadow: 0 0 25px #000;
+     padding:0.5em;
+     margin:1em auto;
+     border-radius:10px;
+     width:50%;
+}
+a
+{
+	color:#900;
+	text-decoration:none;
+}
+a:hover
+{
+	text-decoration:underline;
+}
+.blue_box
+{
+		text-decoration:none;
+    text-shadow: 1px 1px 4px #000;
+    color:#DDD;
+     background: rgba(0,0,100,0.8);
+     box-shadow: 0 0 25px #000;
+     padding:0.5em;
+     margin:auto;
+     border-radius:10px;
+     
+     font-size:xx-large;
+     text-align:center;
+}
+.admin_form
+{
+	width:70%;
+	font-size:100%;
+}
+.admin_text
+{
+width:70%;
+margin:6em auto;
+}
+#menu_admin { 
+    float:left;
+    width:18%;
+    height:95%;
+    
+    margin:0;
+    
+    
+    text-shadow: 1px 1px 4px #DDD;
+    background: #CCC;
+    border-bottom-right-radius:50px;
+    color:#999;
+    box-shadow: 20px 20px 50px #000;
+     
+    
+    text-align: center;
+}
+a.admin_button
+{
+	text-decoration:none;
+    text-shadow: 1px 1px 4px #DDD;
+    color:#900;
+    
+     background: #CCC;
+     box-shadow: 0 0 25px #000;
+     padding:0.5em;
+     margin:1em;
+     border-radius:10px;
+     display:inline-block;
+}
+a.admin_button:hover
+{
+	color:white;
+    
+     background: #AAA;
+    
+}
+.admin_menu
+{
+	text-align:left;
+}
+#menu_admin a
+{
+    text-decoration:none;
+    text-shadow: 1px 1px 4px #DDD;
+    color:#900;
+}
+#menu_admin dl,#menu_admin dd
+{
+    margin:0;
+    padding:0.5em;
+}
+#menu_admin dt
+{
+    margin:0;
+    padding:5px 0;
+}
+#menu_admin dd:hover, #menu_admin dd.current
+{
+ background:#999;
+ 
+}
+#menu_admin dd:hover a, #menu_admin dd.current ad
+{
+ color:white;   
+}
+#menu_admin dt
+{
+ background:#000;
+ color:#FFF;
+ margin: 1em 0;
+}
+#menu_admin a.logout
+{
+  color:red;
+}
+#content_admin {
+     float:left;
+     width:80%; 
+     height:100%;
+    
+     text-align:center;
+     padding:1%;
+     overflow:auto;
+     
+}
+
+#content_admin table
+{
+       border:1px solid #AAA;
+    width:80%;
+    margin: auto;
+    border-collapse: collapse;
+        box-shadow: 0 0 25px #000;
+        border-top-left-radius:10px;
+        border-top-right-radius:10px;
+}
+#content_admin th
+{
+    background:#999;
+    
+}
+
+#content_admin tr.darker
+{
+    background: #CCC;
+}
+#content_admin tr.brighter
+{
+    background: #EEE;
+}
+#content_admin td
+{
+    border:1px solid #AAA;
+}
+
+.admin_field_item
+{
+    float:left;
+    border:1px solid #CCC;
+    margin:5px;
+}
+.terraforming_page
+{
+    float:left;
+    width:70%;
+    
+}
+.terraforming_toolbar
+{
+
+    
+    background:rgba(10,15,41,0.8);
+    position:fixed;
+    right:0;
+    height:100%;
+    
+    width:25%;
+    border-bottom-left-radius: 5px;
+    color: #d5cece;
+    text-shadow: 0px 0px 10px #555;
+
+}
+.terraforming_toolbar p, .terraforming_page p, .terraforming_toolbar form
+{
+    text-align:center;
+    margin:auto;
+}
+.terraform_biblio_item
+{
+    overflow-y: auto;
+    height:70%;
+}
+
+.terraforming_option
+{
+    position:fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    background:rgba(221,204,153,0.5);
+    border-radius:0 10px 0 0;
+    height:2em;
+    padding-top:10px;
+}
+#minimap
+{
+    position:fixed;
+    top:5%;
+    left:25%;
+    width:500px;
+    height:500px;
+    background: rgba(255,255,255,0.5);
+    display:none;
+     box-shadow: 0 0 50px #000;
+}
+#map
+{
+    background:#000;
+    box-shadow: 0 0 25px #000;
+  
+    margin:auto;
+}
+#map div
+{
+    margin:0;padding:0;
+    float:left;
+    width:72px;
+    height:72px;
+    text-align:center;
+    cursor:pointer;
+}

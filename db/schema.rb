@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120319175908) do
 
   create_table "players", :force => true do |t|
     t.string   "name",                         :null => false
+    t.string   "description",                  :null => false
     t.integer  "posx",                         :null => false
     t.integer  "posy",                         :null => false
     t.integer  "map_id",                       :null => false

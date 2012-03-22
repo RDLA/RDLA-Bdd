@@ -1,0 +1,21 @@
+<% content_for :section, :home %>
+<h1>RDLA - Administration</h1>
+
+
+<div class="blue_box admin_text">
+<% 
+quote = ["Un grand pouvoir implique de grandes responsabilités",
+"RDLA n’a jamais de bug. Il développe juste certaines fonctions aléatoires.",
+"Ça vous fait pas mal à la tête de glandouiller vingt-quatre heures sur vingt-quatre ?",
+"J'en ai rien à foutre ! Vous pourriez vous marier avec une chèvre si ça vous chante. Et puis, si y en a une qu'est d'accord, rappelez-vous qu'c'est inespéré puis sautez sur l'occasion.",
+"Moi, je dis que c'est magique à cause des merdes qui pendouillent, mais ça se trouve, c'est pas ça ...",
+"Toi un jour je te crame ta famille, toi.",
+"Non, vous, vous vous maravez. Quand on a pas de technique, il faut y aller à la zob.",
+"En plus je connais une technique pour tuer trois hommes en un coup rien qu’avec des feuilles mortes ! Alors là, vous êtes deux, vous avez bien de la chance.",
+"C'est le boulot qu'on ne commence jamais qui est le plus long à terminer.",
+"Fuyez, pauvres fous !",
+"Vous ne passerez pas !",
+"Qui que l’on soit au fond de nous, nous ne sommes jugés que d’après nos actes.",
+"N'oublie pas, un Jedi doit sentir la Force filtrer à travers son esprit"] %>
+<%= quote[rand(quote.length)] %>
+</div>

@@ -1,6 +1,19 @@
 Bdd::Application.routes.draw do
   devise_for :users
+  namespace :admin do
+    resources :maps, :users, :players, :stories, :fields
+    resources :terraformings, :only => [:index, :create] do
+      collection do
+        put :update_position
+        put :create_all
+        get :minimap_js
+        get :field_css
+      end
+    end
+    root :to => "admin#index"
+  end
 
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
