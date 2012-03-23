@@ -1,7 +1,5 @@
 class Admin::UsersController < Admin::AreaController
   before_filter :manage_password, :only => [:create, :update]
-
-  
   private
   def manage_password
     if params[:user][:password].blank?

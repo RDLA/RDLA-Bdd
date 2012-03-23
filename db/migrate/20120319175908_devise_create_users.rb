@@ -5,6 +5,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.trackable
       t.string :role, :null => false ,:default => "user"
       t.string :type
+      t.integer :red_color, :null => false ,:default => 255
+      t.integer :green_color, :null => false ,:default => 255
+      t.integer :blue_color, :null => false ,:default => 255
       t.timestamps
     end
 

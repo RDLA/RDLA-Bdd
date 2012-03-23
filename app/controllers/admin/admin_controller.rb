@@ -1,5 +1,4 @@
 class Admin::AdminController <  Admin::AreaController
-	def index
-		
-	end
+  def index
+  end
 end

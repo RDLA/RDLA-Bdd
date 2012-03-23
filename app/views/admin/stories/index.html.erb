@@ -1,0 +1,61 @@
+<% content_for :section, :stories %>
+<h1>Backlog</h1>
+<div class="instruction_box">
+  <ul>
+    <li>Double click on a story to open it.</li>
+    <li>Drag and drop story in the section you want.</li>
+    <li>Click on the story with a "plus" to create a new note.</li>
+  </ul>
+</div>
+<div id="running" class="current_stories">
+<h2>Current Sprint</h2>
+<% @stories.running.each do |story| %>
+<div id="story_<%= story.id =%>" class="story <%= "user_#{story.user_id}" if story.user_id? %>">
+  <%= raw "##{story.id} - #{story.category.capitalize}<br /> #{story.description}" %>
+</div>
+<% end %>
+</div>
+<div id="waiting" class="available_stories">
+<h2>Available Stories</h2>
+<div id="new_story" class="new_story">
+<p>+</p>
+</div>
+<% @stories.waiting.each do |story| %>
+<div id="story_<%= story.id =%>" class="story <%= "user_#{story.user_id}" if story.user_id? %>">
+  <%= raw "##{story.id} - #{story.category.capitalize}<br /> #{story.description}" %>
+</div>
+<% end %>
+</div>
+
+<div id="complete" class="completed_stories">
+<h2>Completed Stories</h2>
+<% @stories.complete.each do |story| %>
+<div id="story_<%= story.id =%>" class="story <%= "user_#{story.user_id}" if story.user_id? %>">
+  <%= raw "##{story.id} - #{story.category.capitalize}<br /> #{story.description}" %>
+</div>
+<% end %>
+</div>
+
+<div id="edit_story">
+  <%= hidden_field_tag "id_story" %>
+  <%= hidden_field_tag "action" %>
+  <p>
+    <label>Assigné à :</label>
+    <%= select_tag "user_id", options_for_select(User::Admin.all.collect{|u| [u.email,u.id]}) %>
+  </p>
+  <p>
+    <label>Description<br /></label>
+    <%= text_area_tag 'description', nil, :size => "100x10" %>
+  </p>
+  <p>
+    Priorité <%= select_tag "priority", options_for_select((1..9)) %> -
+    Effort <%= select_tag "effort", options_for_select([["Faible",1],["Normale",2],["Important",3]]) %>
+  </p>
+  <p>
+  <label>Catégorie :</label>
+  <%= select_tag "category", options_for_select([["Draft","draft"],["Bug","bug"],["Feature","feature"]]) %>
+  </p>
+  <p class="end_form">
+    <input type="button" value="Confirmer" /><input type="button" value="Supprimer" /><input type="button" value="Annuler" />
+  </p>
+</div>

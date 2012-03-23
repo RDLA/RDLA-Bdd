@@ -1,0 +1,5 @@
+<% User::Admin.all.each do |user| %>
+.user_<%= user.id %> {
+  background:url("/assets/pin.png") no-repeat top rgba(<%= user.red_color %>,<%= user.green_color %>,<%= user.blue_color %>,0.8);
+}
+<% end %>

@@ -2,16 +2,13 @@
 class Admin::TerraformingsController < Admin::AreaController
   before_filter :get_session, :only => [:index, :create, :create_all, :minimap_js]
   layout false
-  
+
   def index
-  
+
     @categories = Field.all.collect{ |f| Category.find(f.category_id) rescue nil}.compact.uniq
-    
     @maps = Map.all
-   
   end
   def create
-    
     Terraforming.where("posx=? AND posy=? AND map_id = ?",params[:posx].to_i, params[:posy].to_i, params[:map].to_i ).destroy_all
     unless(@map.default_field_id == params[:field].to_i)
       t = Terraforming.new
@@ -22,15 +19,10 @@ class Admin::TerraformingsController < Admin::AreaController
       t.save
     end
     @fields = @map.get_fields(@posx, @posy, [@width, @height].max )
-   
-    
     render :show_map
   end
   def create_all
-    
     Terraforming.where("posx BETWEEN ? AND ? AND posy BETWEEN ? AND ? AND map_id = ?",params[:posx].to_i,params[:posx].to_i+params[:width].to_i, params[:posy].to_i, params[:posy].to_i+params[:height].to_i, @map.id ).destroy_all
-    
-    
     params[:posy].to_i.upto(params[:posy].to_i+params[:height].to_i) do |y|
       params[:posx].to_i.upto(params[:posx].to_i+params[:width].to_i) do |x|
         unless(@map.default_field_id == params[:field].to_i)
@@ -43,7 +35,6 @@ class Admin::TerraformingsController < Admin::AreaController
         end
       end
     end
-    
     @fields = @map.get_fields(@posx, @posy, [@width, @height].max )
     render :show_map
   end
@@ -63,13 +54,11 @@ class Admin::TerraformingsController < Admin::AreaController
   def minimap_js
     @minimap_terraformings = @map.terraformings.order("field_id ASC")
     posx = @minimap_terraformings.collect{|t| t.posx}
-    @posx_min = posx.min 
+    @posx_min = posx.min
     @minimap_width = posx.max - posx.min + 1
-    
     posy = @minimap_terraformings.collect{|t| t.posy}
     @posy_min = posy.min
-    @minimap_height = posy.max - posy.min + 1  
-    
+    @minimap_height = posy.max - posy.min + 1
   end
 
   private
@@ -81,13 +70,13 @@ class Admin::TerraformingsController < Admin::AreaController
       session[:terraforming_width] = 10
       session[:terraforming_height] = 10
     end
-    
+
     @map = Map.find session[:terraforming_map_id].to_i
     @posx = session[:terraforming_posx].to_i
     @posy = session[:terraforming_posy].to_i
     @width = session[:terraforming_width].to_i
     @height = session[:terraforming_height].to_i
-    
+
     @fields = @map.get_fields(@posx, @posy, [@width, @height].max )
   end
 end

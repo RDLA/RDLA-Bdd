@@ -9,8 +9,8 @@ class Field < ActiveRecord::Base
   validates :filename, :presence => true
   validates :color, :presence => true
   validates :category, :presence => true
-  
-  # Internal: Get all field available in a distant location. The 
+
+  # Internal: Get all field available in a distant location. The
   # location is defined in ASSETS_URL in initializer/url.rb
   #
   # Returns an array containing all filenames available in the location

@@ -1,6 +1,6 @@
 class Story < ActiveRecord::Base
 
-  attr_accessible :description, :type, :priority, :effort, :status
+  attr_accessible :description, :type, :priority, :effort, :status,:category, :user_id
 
   belongs_to :user
 
@@ -9,9 +9,9 @@ class Story < ActiveRecord::Base
   validates :priority, :numericality => true
   validates :effort, :numericality => true
 
-#  scope :running, where("status='running'")
-#  scope :waiting, where("status='waiting'")
-#  scope :complete, where("status='complete'")
+  scope :running, where("status='running'")
+  scope :waiting, where("status='waiting'")
+  scope :complete, where("status='complete'")
 
 #  scope :feature, where("category='feature'")
 #  scope :bug, where("category='bug'")

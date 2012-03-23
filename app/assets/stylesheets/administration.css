@@ -16,10 +16,11 @@ h1
     color:#DDD;
      background: rgba(100,0,0,0.8);
      box-shadow: 0 0 25px #000;
-     padding:0.5em;
-     margin:1em auto;
+     padding:0.25em;
+     margin:0 auto;
      border-radius:10px;
      width:50%;
+     
 }
 a
 {
@@ -245,4 +246,103 @@ a.admin_button:hover
     height:72px;
     text-align:center;
     cursor:pointer;
+}
+/* ********************* */
+/*     BACKLOG           */
+/* ********************* */
+.current_stories, .available_stories,.completed_stories
+{
+	background:rgba(200,200,200,0.9);
+	text-shadow: 1px 1px 4px #000;
+    color:#fff;
+    border-radius:20px;
+    width:90%;
+    margin:1em;
+    display:inline-block;
+    box-shadow: 20px 20px 50px #000;
+    padding:1em;
+    min-height:200px;
+}
+
+.story,.new_story
+{
+	width:100px;
+	height:100px;;
+	float:left;
+	text-align:left;
+	background:url("/assets/pin.png") no-repeat top rgba(100,100,100,0.8);
+	
+	padding:1em;
+	padding-top:30px;
+	box-shadow: 10px 10px 25px #111;
+	margin-bottom:0.5em;
+	margin-right:1em;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+.new_story
+{
+	cursor:pointer;
+}
+.new_story p
+{
+	text-align:center;
+	font-size:100px;
+	margin:auto;
+		
+}
+#edit_story
+{
+	display:none;
+	position:fixed;
+	left:25%;
+	top:50px;
+	background:url("/assets/pin.png") no-repeat top rgba(0,100,100,0.8);
+	box-shadow: 10px 10px 25px #111;
+	padding:1em;
+	padding-top:30px;
+}
+#edit_story input[type="button"]
+{
+
+	border-radius:5px;
+	background:#090;
+	border:0;
+	color:#FFF;
+ 	text-shadow: 1px 1px 4px #000;
+ 	padding:0.5em 1em;
+ 	font-family: 'Happy Monkey', cursive;
+ 	box-shadow: 10px 10px 25px #111;
+ 	cursor:pointer;
+}
+#edit_story input[type="button"]:active {
+	position:relative;
+	top:5px;
+	}
+#edit_story input[value="Supprimer"]
+{
+	background:#900;
+	color:white;
+}
+#edit_story input[value="Annuler"]
+{
+	background:#AAA;
+	color:white;
+}
+#edit_story .end_form
+{
+	text-align:right
+}
+.instruction_box
+{
+	font-size:80%;
+	background:rgba(0,0,100,0.8);
+	color:white;
+	width:40%;
+	text-align:left;
+	border-radius:10px;
+	float:right;
+	
+	
 }
