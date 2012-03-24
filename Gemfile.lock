@@ -28,6 +28,9 @@ GEM
     activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    airbrake (3.0.9)
+      activesupport
+      builder
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -127,6 +130,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   coffee-rails (~> 3.2.1)
   devise
   inherited_resources
