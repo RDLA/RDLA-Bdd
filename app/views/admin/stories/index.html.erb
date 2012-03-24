@@ -49,11 +49,11 @@
   </p>
   <p>
     Priorité <%= select_tag "priority", options_for_select((1..9)) %> -
-    Effort <%= select_tag "effort", options_for_select([["Faible",1],["Normale",2],["Important",3]]) %>
+    Effort <%= select_tag "effort", options_for_effort_select() %>
   </p>
   <p>
   <label>Catégorie :</label>
-  <%= select_tag "category", options_for_select([["Draft","draft"],["Bug","bug"],["Feature","feature"]]) %>
+  <%= select_tag "category", options_for_category_select() %>
   </p>
   <p class="end_form">
     <input type="button" value="Confirmer" /><input type="button" value="Supprimer" /><input type="button" value="Annuler" />

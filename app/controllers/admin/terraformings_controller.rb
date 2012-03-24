@@ -66,7 +66,6 @@ class Admin::TerraformingsController < Admin::AreaController
       @posy_min = posy.min
       @minimap_height = posy.max - posy.min + 1
     end
-    
   end
 
   private
