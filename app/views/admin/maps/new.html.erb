@@ -1,5 +1,5 @@
 <% content_for :section, :maps %>
 <h1>Nouveau plan de jeux</h1>
 <%= form_for @map, :as => :map, :url => admin_maps_path do |f| %>
-  <%= render 'form', :locals => { :f => f, :button => 'Créer'} %>
+  <%= render 'form', :f => f, :button => 'Créer', :map => @map, :fields => @fields %>
 <% end %>

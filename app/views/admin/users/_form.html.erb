@@ -22,7 +22,7 @@
   <%= f.label :password_confirmation, "Confirmation du mot de passe" %>
   <%= f.password_field :password_confirmation %>
 </p>
-<% if @user.is_a?(User::Admin) %>
+<% if user.is_a?(User::Admin) %>
 <h3>Choix de votre couleur</h3>
 <p> Inscrire les composantes rouge, vert, bleu (nombre de 0 à 255)</p>
 <p id="sample_color" > Voici à quoi ressemblera votre couleur </p>

@@ -23,9 +23,9 @@
        });
     })
   </script>
-  <%= f.select(:default_field_id, options_for_select(@fields.collect {|field| [field.filename,field.id]}, @map.default_field_id) ) %>
+  <%= f.select(:default_field_id, options_for_select(fields.collect {|field| [field.filename,field.id]}, map.default_field_id) ) %>
 
-  <br /><img id="field_picture" src="<%= "#{ASSETS_URL}#{@map.default_field.blank? ? @fields.first.filename : @map.default_field.filename}"  %>">
+  <br /><img id="field_picture" src="<%= "#{ASSETS_URL}#{map.default_field.blank? ? fields.first.filename : map.default_field.filename}"  %>">
 </p>
 <p>
   <%= f.submit :value => button %>

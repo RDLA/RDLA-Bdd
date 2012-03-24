@@ -12,7 +12,7 @@
 <div class="blue_box admin_form">
 <p style="clear:both;">
   <%= f.label :category_id, "Catégorie :" %>
-  <%= f.select :category_id, options_for_select([["Choisir...",nil]]+@categories.collect {|cat| [cat.name,cat.id]}, @field.category_id) %>
+  <%= f.select :category_id, options_for_select([["Choisir...",nil]]+categories.collect {|cat| [cat.name,cat.id]}, field.category_id) %>
 </p>
 <p style="clear:both;">
   <%= f.label :color, "Couleur :" %>
@@ -20,7 +20,7 @@
 </p>
 <h3>Terrains disponible sur Ftp:</h3>
 
-<% @distant_fields.each do |d_field| %>
+<% distant_fields.each do |d_field| %>
 <div class="admin_field_item">
   <label for="field_filename_<%= d_field.downcase.delete "."  %>"><img src="<%= "#{ASSETS_URL}#{d_field}" %>" alt="<%= d_field %>"  title="<%= d_field %>" /></label><br />
   <%= radio_button("field", "filename", d_field) %>

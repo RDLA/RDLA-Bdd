@@ -12,7 +12,7 @@
   <div class="blue_box admin_form">
 <p>
   <%= f.label :user_id, "Propriétaire" %>
-  <%= f.select :user_id, options_for_select([["Choisir...",nil]]+@users.collect {|user| [user.email,user.id]}, @player.user_id) %>
+  <%= f.select :user_id, options_for_select([["Choisir...",nil]]+users.collect {|user| [user.email,user.id]}, player.user_id) %>
 </p>
 <p>
   <%= f.label :name, "Nom" %>
@@ -20,7 +20,7 @@
 </p>
 <p>
   <%= f.label :map_id, "Plan" %>
-  <%= f.select :map_id, options_for_select([["Choisir...",nil]]+@maps.collect {|map| [map.name,map.id]}, @player.map_id) %>
+  <%= f.select :map_id, options_for_select([["Choisir...",nil]]+maps.collect {|map| [map.name,map.id]}, player.map_id) %>
 </p>
 <p>
   <%= f.label :posx, "Position X" %>
