@@ -3,6 +3,7 @@ class Map < ActiveRecord::Base
   attr_accessible :name, :default_field_id
 
   belongs_to :default_field, :class_name => 'Field'
+  delegate :filename, :color, :to => :default_field, :prefix => true
 
   has_many :players, :dependent => :nullify
   has_many :terraformings, :dependent => :destroy

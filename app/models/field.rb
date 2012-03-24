@@ -3,6 +3,7 @@ class Field < ActiveRecord::Base
   attr_accessible :filename, :color, :category_id
 
   belongs_to :category
+  delegate :name, :to => :category, :prefix => true
   has_many :terraformings
   has_many :maps
 
