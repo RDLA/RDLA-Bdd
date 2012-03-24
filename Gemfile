@@ -19,7 +19,9 @@ group :development do
 	gem "rails_best_practices"
 	gem "railroady"
 end
-
+group :production do
+	gem 'therubyracer'
+end
 
 
 
