@@ -1,5 +1,5 @@
 <% content_for :section, :maps %>
 <h1>Edition du plan <%= @map.name %></h1>
 <%= form_for @map, :as => :map, :url => admin_map_path do |f| %>
-  <%= render 'form', :f => f, :button => 'Modifier', :map => @map, :fields => @fields} %>
+  <%= render 'form', :f => f, :button => 'Modifier', :map => @map, :fields => @fields %>
 <% end %>
