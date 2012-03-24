@@ -1,4 +1,5 @@
 class Story < ActiveRecord::Base
+  default_scope :order => 'priority DESC, effort ASC, created_at DESC'
 
   attr_accessible :description, :type, :priority, :effort, :status,:category, :user_id
 
