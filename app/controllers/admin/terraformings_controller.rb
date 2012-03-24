@@ -55,7 +55,6 @@ class Admin::TerraformingsController < Admin::AreaController
     @minimap_terraformings = @map.terraformings.order("field_id ASC")
     posx = @minimap_terraformings.collect{|t| t.posx}
     posy = @minimap_terraformings.collect{|t| t.posy}
-    
     if posy.blank? || posx.blank?
       @posx_min = 0
       @posx_max = 10
