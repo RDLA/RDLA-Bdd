@@ -54,11 +54,20 @@ class Admin::TerraformingsController < Admin::AreaController
   def minimap_js
     @minimap_terraformings = @map.terraformings.order("field_id ASC")
     posx = @minimap_terraformings.collect{|t| t.posx}
-    @posx_min = posx.min
-    @minimap_width = posx.max - posx.min + 1
     posy = @minimap_terraformings.collect{|t| t.posy}
-    @posy_min = posy.min
-    @minimap_height = posy.max - posy.min + 1
+    
+    if posy.blank? || posx.blank?
+      @posx_min = 0
+      @posx_max = 10
+      @minimap_width = 5
+      @minimap_height = 5
+    else
+      @posx_min = posx.min
+      @minimap_width = posx.max - posx.min + 1
+      @posy_min = posy.min
+      @minimap_height = posy.max - posy.min + 1
+    end
+    
   end
 
   private
