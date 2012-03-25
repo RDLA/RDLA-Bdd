@@ -131,6 +131,7 @@ $(function() {
 
 					$("<div id='story_"+resp.id+"'></div>").appendTo($("#waiting"));
 					$("#story_"+resp.id).attr("class","story user_"+resp.user_id).html("#"+resp.id+" - "+$("#category option:selected").text()+"<br/>"+resp.description);
+					$("#story_"+resp.id).draggable({ revert: "invalid" });
 					}
 					else
 					{
