@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    attr_accessible :email, :password, :password_confirmation, :red_color, :green_color, :blue_color
+    attr_accessible :email, :password, :password_confirmation, :red_color, :green_color, :blue_color,:id
     devise :database_authenticatable, :trackable, :validatable
 
     has_many :stories

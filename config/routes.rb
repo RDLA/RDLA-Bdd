@@ -16,7 +16,14 @@ Bdd::Application.routes.draw do
     resources :maps do
     	resources :terraformings
     end
-    resources :players, :fields
+    resources :users do
+      
+      resources :players
+      collection do
+       get :find_by_email
+      end
+    end
+    resources :fields,:players
   end
   root :to => "home#index"
   # The priority is based upon order of creation:
