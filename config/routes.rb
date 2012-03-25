@@ -13,7 +13,10 @@ Bdd::Application.routes.draw do
     root :to => "admin#index"
   end
   namespace :api do
-    resources :maps, :players, :fields, :terraformings
+    resources :maps do
+    	resources :terraformings
+    end
+    resources :players, :fields
   end
   root :to => "home#index"
   # The priority is based upon order of creation:

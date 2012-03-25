@@ -1,6 +1,6 @@
 class Player < ActiveRecord::Base
 
-  attr_accessible :name, :posx, :posy, :visual_acuity,  :user_id, :map_id, :description
+  attr_accessible :name, :posx, :posy, :visual_acuity,  :user_id, :map_id, :description, :created_at, :updated_at
 
   belongs_to :map
   delegate :name, :to => :map, :prefix => true
