@@ -272,12 +272,12 @@ a.admin_button:hover
 	text-align:left;
 	background:url("/assets/pin.png") no-repeat top rgba(100,100,100,0.8);
 	
-	/*padding:1em;
-	padding-top:30px;*/
-	padding:50px 2em 2em;
+
+
+	padding:50px 1em 1em;
 
 	box-shadow: 10px 10px 25px #111;
-	/*margin-bottom:0.5em; */
+
 	margin-bottom:2em;
 	border-radius: 5px;
 
