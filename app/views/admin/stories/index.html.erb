@@ -6,6 +6,13 @@
     <li>Drag and drop story in the section you want.</li>
     <li>Click on the story with a "plus" to create a new note.</li>
   </ul>
+ 
+  <ul>
+  <li> Color code:</li>
+  <% User::Admin.all.each do |user| %>
+    <li><span class="user_<%= user.id %>"></span> : <%= user.email %></li>
+  <% end %>
+  </ul>
 </div>
 <div id="running" class="current_stories">
 <h2>Current Sprint</h2>

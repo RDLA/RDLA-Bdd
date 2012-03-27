@@ -346,10 +346,24 @@ a.admin_button:hover
 	font-size:80%;
 	background:rgba(0,0,100,0.8);
 	color:white;
-	width:40%;
+	width:80%;
 	text-align:left;
 	border-radius:10px;
 	float:right;
+	padding:0.5em;
 	
-	
+}
+.instruction_box ul
+{
+	float:left;
+}
+.instruction_box li
+{
+	margin:1.5em;
+	white-space:nowrap;
+}
+.instruction_box li span
+{
+	padding:0.5em 2em;
+	background-image:none;
 }
