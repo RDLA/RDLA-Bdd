@@ -1,5 +1,4 @@
 class Field < ActiveRecord::Base
-
   attr_accessible :filename, :color, :category_id
 
   belongs_to :category
@@ -25,6 +24,6 @@ class Field < ActiveRecord::Base
     end
     list.close
     local_fields = Field.all.collect {|f| f.filename}
-    distant_fields - local_fields
+    distant_fields - local_fields - ["field.png"]
   end
 end

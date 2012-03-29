@@ -1,6 +1,6 @@
 <% content_for :section, :fields %>
 <h1>Liste des Terrains utilisables</h1>
-
+<div class="instruction_box">Après avoir ajouter un terrain, connectez vous au jeu et lancer la commande /RELOAD_SPRITES. Ceci aura pour effet de générer un nouveau fichier de terrains. Il faudra ensuite recharger votre navigateur.</div>
 
 <div class="admin_menu"><%= link_to "Nouveau Terrain", new_admin_field_path, :class => "admin_button" %></div>
 <% unless @fields.empty? %>
