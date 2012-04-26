@@ -1,7 +1,7 @@
 <% #locals: f and button %>
 <% if f.object.errors.any? %>
   <div id="errorExplanation">
-    <p><%= pluralize(f.object.errors.count, "erreur") %> a été rencontrée:</p>
+    <p><%= pluralize(f.object.errors.count, "error") %> on this form:</p>
     <dl>
     <% f.object.errors.full_messages.each do |msg| %>
       <dt><%= msg %></dt>
@@ -11,14 +11,14 @@
   <% end %>
 <div class="blue_box admin_form">
 <p style="clear:both;">
-  <%= f.label :category_id, "Catégorie :" %>
-  <%= f.select :category_id, options_for_select([["Choisir...",nil]]+categories.collect {|cat| [cat.name,cat.id]}, field.category_id) %>
+  <%= f.label :category_id, "Category :" %>
+  <%= f.select :category_id, options_for_select([["Select...",nil]]+categories.collect {|cat| [cat.name,cat.id]}, field.category_id) %>
 </p>
 <p style="clear:both;">
-  <%= f.label :color, "Couleur :" %>
+  <%= f.label :color, "Color :" %>
   <%= f.text_field :color  %>
 </p>
-<h3>Terrains disponible sur Ftp:</h3>
+<h3>Fields available on Ftp Server:</h3>
 
 <% distant_fields.each do |d_field| %>
 <div class="admin_field_item">

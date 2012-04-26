@@ -1,5 +1,5 @@
 <% content_for :section, :fields %>
-<h1>Edition du plan <%= @field.filename %></h1>
+<h1>Edit map <%= @field.filename %></h1>
 <%= form_for @field, :as => :field, :url => admin_field_path do |f| %>
-  <%= render 'form', :f => f, :button => 'Modifier', :categories => @categories, :field => @field, :distant_fields => @distant_fields %>
+  <%= render 'form', :f => f, :button => 'Update', :categories => @categories, :field => @field, :distant_fields => @distant_fields %>
 <% end %>

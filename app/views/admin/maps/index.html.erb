@@ -1,20 +1,20 @@
 <% content_for :section, :maps %>
-<h1>Liste des plans de jeux</h1>
+<h1>Maps of the game</h1>
 
 
-<div class="admin_menu"><%= link_to "Nouveau Plan", new_admin_map_path, :class => "admin_button" %></div>
+<div class="admin_menu"><%= link_to "New map", new_admin_map_path, :class => "admin_button" %></div>
 <% unless @maps.empty? %>
 <table>
   <tr>
-    <th style="width:1px;white-space:nowrap;">Terrain par défaut</th>
-    <th>Nom</th>
+    <th style="width:1px;white-space:nowrap;">Default field</th>
+    <th>Name</th>
     <th style="width:1px;white-space:nowrap;">Actions</th>
   </tr>
 <% @maps.each do |map|  %>
   <tr  class="<%= cycle("darker", "brighter") -%>">
     <td><img src="<%= "#{ASSETS_URL}#{map.default_field_filename}" %>" alt="<%= map.default_field_filename %>" /></td>
     <td><%= map.name %></td>
-    <td style="width:1px;white-space:nowrap;"><%= link_to "Editer", edit_admin_map_path(map.id) %> - <%= link_to "Supprimer", admin_map_path(map.id), :method => :delete, :confirm => "Supprimer cet enregistrement?" %></td>
+    <td style="width:1px;white-space:nowrap;"><%= link_to "Edit", edit_admin_map_path(map.id) %> - <%= link_to "Delete", admin_map_path(map.id), :method => :delete, :confirm => "Are you sure?" %></td>
   </tr>
 <%  end %>
 </table>

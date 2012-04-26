@@ -1,5 +1,5 @@
 <% content_for :section, :fields %>
-<h1>Nouveau Terrain</h1>
+<h1>New Field</h1>
 <%= form_for @field, :as => :field, :url => admin_fields_path do |f| %>
-  <%= render 'form',  :f => f, :button => 'Créer', :categories => @categories, :field => @field, :distant_fields => @distant_fields %>
+  <%= render 'form',  :f => f, :button => 'Create', :categories => @categories, :field => @field, :distant_fields => @distant_fields %>
 <% end %>

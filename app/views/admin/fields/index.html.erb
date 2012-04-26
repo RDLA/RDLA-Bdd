@@ -1,14 +1,14 @@
 <% content_for :section, :fields %>
-<h1>Liste des Terrains utilisables</h1>
-<div class="instruction_box">Après avoir ajouter un terrain, connectez vous au jeu et lancer la commande /RELOAD_SPRITES. Ceci aura pour effet de générer un nouveau fichier de terrains. Il faudra ensuite recharger votre navigateur.</div>
+<h1>Available Fields</h1>
+<div class="instruction_box">After adding or updating a field, go to the game and type the command /RELOAD_SPRITES. This will generate a new fields file. We just have to reload the browser in order to see the modification.</div>
 
-<div class="admin_menu"><%= link_to "Nouveau Terrain", new_admin_field_path, :class => "admin_button" %></div>
+<div class="admin_menu"><%= link_to "New Field", new_admin_field_path, :class => "admin_button" %></div>
 <% unless @fields.empty? %>
 <table>
   <tr>
-    <th  style="width:1px;white-space:nowrap;">Image</th>
-    <th>Categorie</th>
-    <th>Nom image</th>
+    <th  style="width:1px;white-space:nowrap;">Picture</th>
+    <th>Category</th>
+    <th>Picture Name</th>
     <th style="width:1px;white-space:nowrap;">Actions</th>
   </tr>
 <% @fields.each do |field|  %>
@@ -16,7 +16,7 @@
     <td><img src="<%= "#{ASSETS_URL}#{field.filename}" %>" alt="<%= field.filename %>" /></td>
     <td><%= field.category_name unless field.category_id.blank? %> </td>
     <td><%= field.filename %></td>
-    <td style="width:1px;white-space:nowrap;"><%= link_to "Editer", edit_admin_field_path(field.id) %> - <%= link_to "Supprimer", admin_field_path(field.id), :method => :delete, :confirm => "Supprimer cet enregistrement?" %></td>
+    <td style="width:1px;white-space:nowrap;"><%= link_to "Edit", edit_admin_field_path(field.id) %> - <%= link_to "Delete", admin_field_path(field.id), :method => :delete, :confirm => "Are you sure?" %></td>
   </tr>
 <%  end %>
 </table>

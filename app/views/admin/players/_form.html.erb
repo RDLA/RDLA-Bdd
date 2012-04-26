@@ -1,7 +1,7 @@
 <% #locals: f and button %>
 <% if f.object.errors.any? %>
   <div id="errorExplanation">
-    <p><%= pluralize(f.object.errors.count, "erreur") %> a été rencontrée:</p>
+    <p><%= pluralize(f.object.errors.count, "erreur") %> in this form:</p>
     <dl>
     <% f.object.errors.full_messages.each do |msg| %>
       <dt><%= msg %></dt>
@@ -11,15 +11,15 @@
   <% end %>
   <div class="blue_box admin_form">
 <p>
-  <%= f.label :user_id, "Propriétaire" %>
-  <%= f.select :user_id, options_for_select([["Choisir...",nil]]+users.collect {|user| [user.email,user.id]}, player.user_id) %>
+  <%= f.label :user_id, "Owner" %>
+  <%= f.select :user_id, options_for_select([["Select...",nil]]+users.collect {|user| [user.email,user.id]}, player.user_id) %>
 </p>
 <p>
-  <%= f.label :name, "Nom" %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
 </p>
 <p>
-  <%= f.label :map_id, "Plan" %>
+  <%= f.label :map_id, "Map" %>
   <%= f.select :map_id, options_for_select([["Choisir...",nil]]+maps.collect {|map| [map.name,map.id]}, player.map_id) %>
 </p>
 <p>
@@ -32,7 +32,7 @@
   <%= f.number_field :posy, :step => 1 %>
 </p>
 <p>
-  <%= f.label :description, "Description physique (250 carac max)" %><br />
+  <%= f.label :description, "Physical Description (length: 250 max)" %><br />
   <%= f.text_area :description, :size => "30x10" %>
 </p>
 <p>

@@ -1,12 +1,12 @@
 <% content_for :section,  :players %>
-<h1>Liste des personnages</h1>
+<h1>All players</h1>
 
-<div class="admin_menu"><%= link_to "Nouveau Personnage", new_admin_player_path, :class => "admin_button" %></div>
+<div class="admin_menu"><%= link_to "New Player", new_admin_player_path, :class => "admin_button" %></div>
 <% unless @players.empty? %>
 <table>
   <tr>
-    <th>Propriétaire</th>
-    <th>Nom</th>
+    <th>Owner</th>
+    <th>Name</th>
     <th>Position</th>
     <th  style="width:1px;white-space:nowrap;">Actions</th>
   </tr>
@@ -15,10 +15,10 @@
     <td><%= player.user_email unless player.user.blank? %></td>
     <td><%= player.name %></td>
     <td><%= "[#{player.posx};#{player.posy}] #{player.map_name}"  unless player.map_id.blank? %></td>
-    <td style="width:1px;white-space:nowrap;"><%= link_to "Editer", edit_admin_player_path(player.id) %> - <%= link_to "Supprimer", admin_player_path(player.id), :method => :delete, :confirm => "Supprimer cet enregistrement?" %></td>
+    <td style="width:1px;white-space:nowrap;"><%= link_to "Edit", edit_admin_player_path(player.id) %> - <%= link_to "Delete", admin_player_path(player.id), :method => :delete, :confirm => "Are you sure?" %></td>
   </tr>
 <%  end %>
 </table>
 <% else %>
-  Aucun personnage.
+  No player.
 <% end %>

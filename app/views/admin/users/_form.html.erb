@@ -1,7 +1,7 @@
 <% #locals: f and button %>
 <% if f.object.errors.any? %>
   <div id="errorExplanation">
-    <p><%= pluralize(f.object.errors.count, "erreur") %> a été rencontrée:</p>
+    <p><%= pluralize(f.object.errors.count, "error") %> in this form:</p>
     <dl>
     <% f.object.errors.full_messages.each do |msg| %>
       <dt><%= msg %></dt>
@@ -15,27 +15,27 @@
   <%= f.text_field :email %>
 </p>
 <p>
-  <%= f.label :password, "Mot de passe" %>
+  <%= f.label :password%>
   <%= f.password_field :password %>
 </p>
 <p>
-  <%= f.label :password_confirmation, "Confirmation du mot de passe" %>
+  <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 </p>
 <% if user.is_a?(User::Admin) %>
-<h3>Choix de votre couleur</h3>
-<p> Inscrire les composantes rouge, vert, bleu (nombre de 0 à 255)</p>
-<p id="sample_color" > Voici à quoi ressemblera votre couleur </p>
+<h3>Select your color</h3>
+<p> Select red, green and blue value (from 0 to 255)</p>
+<p id="sample_color" > Here is what your color will look like </p>
 <p>
-  <%= f.label :red_color, "Rouge" %>
+  <%= f.label :red_color, "Red" %>
   <%= f.number_field :red_color, :min => 0, :max => 255,:step => 5, :onkeypress => "test_color()", :onmousedown => "test_color()", :onclick => "test_color()", :onmouseover => "test_color()"%>
 </p>
 <p>
-  <%= f.label :green_color, "Vert" %>
+  <%= f.label :green_color, "Green" %>
   <%= f.number_field :green_color, :min => 0, :max => 255,:step => 5, :onkeypress => "test_color()", :onmousedown => "test_color()", :onclick => "test_color()", :onmouseover => "test_color()"%>
 </p>
 <p>
-  <%= f.label :blue_color, "Bleu" %>
+  <%= f.label :blue_color, "Blue" %>
   <%= f.number_field :blue_color, :min => 0, :max => 255,:step => 5, :onkeypress => "test_color()", :onmousedown => "test_color()", :onclick => "test_color()", :onmouseover => "test_color()" %>
 </p>
 <% end %>

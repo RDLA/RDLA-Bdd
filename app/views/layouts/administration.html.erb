@@ -10,17 +10,17 @@
 </head>
 <body>
   <dl id="menu_admin">
-    <dd><%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, :class => :logout %></dd>
-    <dd><%= link_to "Accueil du site", "http://live.rdla.fr"%></dd>
-    <dd <%= "class='current'" if (yield :section) == 'home' %>><%= link_to "Accueil Administration", admin_root_path%></dd>
-    <dt>Production</dt>
+    <dd><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => :logout %></dd>
+    <dd><%= link_to "Game Homepage", "http://live.rdla.fr"%></dd>
+    <dd <%= "class='current'" if (yield :section) == 'home' %>><%= link_to "Administration Homepage", admin_root_path%></dd>
+    <dt>Engine</dt>
     <dd <%= "class='current'" if (yield :section) == 'stories' %>><%= link_to "Backlog", admin_stories_path%></dd>
-    <dt>Utilisateurs</dt>
-    <dd <%= "class='current'" if (yield :section) == 'users' %>><%= link_to "Comptes", admin_users_path%></dd>
-    <dd <%= "class='current'" if (yield :section) == 'players' %>><%= link_to "Personnages", admin_players_path%></dd>
-    <dt>Terre à fromage</dt>
-    <dd <%= "class='current'" if (yield :section) == 'maps' %>><%= link_to "Plans", admin_maps_path%></dd>
-    <dd <%= "class='current'" if (yield :section) == 'fields' %>><%= link_to "Terrains", admin_fields_path%></dd>
+    <dt>Users</dt>
+    <dd <%= "class='current'" if (yield :section) == 'users' %>><%= link_to "Accounts", admin_users_path%></dd>
+    <dd <%= "class='current'" if (yield :section) == 'players' %>><%= link_to "Players", admin_players_path%></dd>
+    <dt>Level Design</dt>
+    <dd <%= "class='current'" if (yield :section) == 'maps' %>><%= link_to "Maps", admin_maps_path%></dd>
+    <dd <%= "class='current'" if (yield :section) == 'fields' %>><%= link_to "Fields", admin_fields_path%></dd>
    <dd <%= "class='current'" if (yield :section) == 'terraformings' %>><%= link_to "Terraformings", admin_terraformings_path%></dd>
   </dl>
     <div id="content_admin">

@@ -1,7 +1,7 @@
 <% #locals: f and button %>
 <% if f.object.errors.any? %>
   <div id="errorExplanation">
-    <p><%= pluralize(f.object.errors.count, "erreur") %> a été rencontrée:</p>
+    <p><%= pluralize(f.object.errors.count, "erreur") %> in this form:</p>
     <dl>
     <% f.object.errors.full_messages.each do |msg| %>
       <dt><%= msg %></dt>
@@ -11,11 +11,11 @@
   <% end %>
 <div class="blue_box admin_form">
 <p>
-  <%= f.label :name, "Nom" %>
+  <%= f.label :name %>
   <%= f.text_field :name %>
 </p>
 <p>
-  <%= f.label :default_field_id, "Terrain par défaut" %>
+  <%= f.label :default_field_id, "Default field" %>
   <script type="text/javascript">
     $(function(){
        $('#map_default_field_id').change(function() {
